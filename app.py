@@ -37,7 +37,7 @@ def addWindow():
         window = Window(jsonDict["name"], jsonDict["location"])
         windows += [window]
 
-        return '{"id" :' + f' "{window.id}"' + '}'
+        return '{"id" : "' + window.id + '"}'
     else:
        return "Bad Request"
 
@@ -48,13 +48,15 @@ def getWindow(id):
     for w in windows:
         if w.id == id:
             out = '{'
-            out += f'"id" : "{w.id}",'
-            out += f'"name" : "{w.name}",'
-            out += f'"location" : "{w.location}",'
-            out += f'"status" : "{str(w.status)}"'
+            out += '"id" : "' + (w.id) + '",'
+            out += '"name" : "' + (w.name) +'",'
+            out += '"location" : "' + str(w.location) + '",'
+            out += '"status" : "' + str(w.status) +'"'
             out += '}'
 
             return out
+    
+    return "Nothing Found"
 
 @app.route('/updateStatus/', methods = ["POST"])
 def updateStaus():
