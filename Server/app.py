@@ -74,6 +74,8 @@ def setRoom():
     windowID = jsonDict["ID"]
     roomName = jsonDict["roomName"]
     
+    print('set room of window "' + windowID + '" to "' + roomName + '"')
+
     i = 0
     for w in windows:
         if w.ID == windowID:
