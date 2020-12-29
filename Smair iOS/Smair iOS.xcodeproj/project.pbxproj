@@ -1,0 +1,619 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		285C0546259B6C3600C5C320 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C0545259B6C3600C5C320 /* AppDelegate.swift */; };
+		285C0548259B6C3600C5C320 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C0547259B6C3600C5C320 /* SceneDelegate.swift */; };
+		285C054A259B6C3600C5C320 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C0549259B6C3600C5C320 /* ContentView.swift */; };
+		285C054D259B6C3600C5C320 /* Smair_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 285C054B259B6C3600C5C320 /* Smair_iOS.xcdatamodeld */; };
+		285C054F259B6C3B00C5C320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 285C054E259B6C3B00C5C320 /* Assets.xcassets */; };
+		285C0552259B6C3B00C5C320 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 285C0551259B6C3B00C5C320 /* Preview Assets.xcassets */; };
+		285C0555259B6C3B00C5C320 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285C0553259B6C3B00C5C320 /* LaunchScreen.storyboard */; };
+		285C0560259B6C3C00C5C320 /* Smair_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C055F259B6C3C00C5C320 /* Smair_iOSTests.swift */; };
+		285C056B259B6C3C00C5C320 /* Smair_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C056A259B6C3C00C5C320 /* Smair_iOSUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		285C055C259B6C3C00C5C320 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 285C053A259B6C3600C5C320 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 285C0541259B6C3600C5C320;
+			remoteInfo = "Smair iOS";
+		};
+		285C0567259B6C3C00C5C320 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 285C053A259B6C3600C5C320 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 285C0541259B6C3600C5C320;
+			remoteInfo = "Smair iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		285C0542259B6C3600C5C320 /* Smair iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smair iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		285C0545259B6C3600C5C320 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		285C0547259B6C3600C5C320 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		285C0549259B6C3600C5C320 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		285C054C259B6C3600C5C320 /* Smair_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Smair_iOS.xcdatamodel; sourceTree = "<group>"; };
+		285C054E259B6C3B00C5C320 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		285C0551259B6C3B00C5C320 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		285C0554259B6C3B00C5C320 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		285C0556259B6C3B00C5C320 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		285C055B259B6C3C00C5C320 /* Smair iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smair iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		285C055F259B6C3C00C5C320 /* Smair_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smair_iOSTests.swift; sourceTree = "<group>"; };
+		285C0561259B6C3C00C5C320 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		285C0566259B6C3C00C5C320 /* Smair iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smair iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		285C056A259B6C3C00C5C320 /* Smair_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smair_iOSUITests.swift; sourceTree = "<group>"; };
+		285C056C259B6C3C00C5C320 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		285C053F259B6C3600C5C320 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		285C0558259B6C3C00C5C320 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		285C0563259B6C3C00C5C320 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		285C0539259B6C3600C5C320 = {
+			isa = PBXGroup;
+			children = (
+				285C0544259B6C3600C5C320 /* Smair iOS */,
+				285C055E259B6C3C00C5C320 /* Smair iOSTests */,
+				285C0569259B6C3C00C5C320 /* Smair iOSUITests */,
+				285C0543259B6C3600C5C320 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		285C0543259B6C3600C5C320 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				285C0542259B6C3600C5C320 /* Smair iOS.app */,
+				285C055B259B6C3C00C5C320 /* Smair iOSTests.xctest */,
+				285C0566259B6C3C00C5C320 /* Smair iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		285C0544259B6C3600C5C320 /* Smair iOS */ = {
+			isa = PBXGroup;
+			children = (
+				285C0545259B6C3600C5C320 /* AppDelegate.swift */,
+				285C0547259B6C3600C5C320 /* SceneDelegate.swift */,
+				285C0549259B6C3600C5C320 /* ContentView.swift */,
+				285C054E259B6C3B00C5C320 /* Assets.xcassets */,
+				285C0553259B6C3B00C5C320 /* LaunchScreen.storyboard */,
+				285C0556259B6C3B00C5C320 /* Info.plist */,
+				285C054B259B6C3600C5C320 /* Smair_iOS.xcdatamodeld */,
+				285C0550259B6C3B00C5C320 /* Preview Content */,
+			);
+			path = "Smair iOS";
+			sourceTree = "<group>";
+		};
+		285C0550259B6C3B00C5C320 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				285C0551259B6C3B00C5C320 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		285C055E259B6C3C00C5C320 /* Smair iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				285C055F259B6C3C00C5C320 /* Smair_iOSTests.swift */,
+				285C0561259B6C3C00C5C320 /* Info.plist */,
+			);
+			path = "Smair iOSTests";
+			sourceTree = "<group>";
+		};
+		285C0569259B6C3C00C5C320 /* Smair iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				285C056A259B6C3C00C5C320 /* Smair_iOSUITests.swift */,
+				285C056C259B6C3C00C5C320 /* Info.plist */,
+			);
+			path = "Smair iOSUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		285C0541259B6C3600C5C320 /* Smair iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 285C0578259B6C4400C5C320 /* Build configuration list for PBXNativeTarget "Smair iOS" */;
+			buildPhases = (
+				285C053E259B6C3600C5C320 /* Sources */,
+				285C053F259B6C3600C5C320 /* Frameworks */,
+				285C0540259B6C3600C5C320 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Smair iOS";
+			productName = "Smair iOS";
+			productReference = 285C0542259B6C3600C5C320 /* Smair iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		285C055A259B6C3C00C5C320 /* Smair iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 285C0579259B6C4400C5C320 /* Build configuration list for PBXNativeTarget "Smair iOSTests" */;
+			buildPhases = (
+				285C0557259B6C3C00C5C320 /* Sources */,
+				285C0558259B6C3C00C5C320 /* Frameworks */,
+				285C0559259B6C3C00C5C320 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				285C055D259B6C3C00C5C320 /* PBXTargetDependency */,
+			);
+			name = "Smair iOSTests";
+			productName = "Smair iOSTests";
+			productReference = 285C055B259B6C3C00C5C320 /* Smair iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		285C0565259B6C3C00C5C320 /* Smair iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 285C057A259B6C4400C5C320 /* Build configuration list for PBXNativeTarget "Smair iOSUITests" */;
+			buildPhases = (
+				285C0562259B6C3C00C5C320 /* Sources */,
+				285C0563259B6C3C00C5C320 /* Frameworks */,
+				285C0564259B6C3C00C5C320 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				285C0568259B6C3C00C5C320 /* PBXTargetDependency */,
+			);
+			name = "Smair iOSUITests";
+			productName = "Smair iOSUITests";
+			productReference = 285C0566259B6C3C00C5C320 /* Smair iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		285C053A259B6C3600C5C320 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					285C0541259B6C3600C5C320 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					285C055A259B6C3C00C5C320 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 285C0541259B6C3600C5C320;
+					};
+					285C0565259B6C3C00C5C320 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 285C0541259B6C3600C5C320;
+					};
+				};
+			};
+			buildConfigurationList = 285C053D259B6C3600C5C320 /* Build configuration list for PBXProject "Smair iOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 285C0539259B6C3600C5C320;
+			productRefGroup = 285C0543259B6C3600C5C320 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				285C0541259B6C3600C5C320 /* Smair iOS */,
+				285C055A259B6C3C00C5C320 /* Smair iOSTests */,
+				285C0565259B6C3C00C5C320 /* Smair iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		285C0540259B6C3600C5C320 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				285C0555259B6C3B00C5C320 /* LaunchScreen.storyboard in Resources */,
+				285C0552259B6C3B00C5C320 /* Preview Assets.xcassets in Resources */,
+				285C054F259B6C3B00C5C320 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		285C0559259B6C3C00C5C320 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		285C0564259B6C3C00C5C320 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		285C053E259B6C3600C5C320 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				285C054D259B6C3600C5C320 /* Smair_iOS.xcdatamodeld in Sources */,
+				285C0546259B6C3600C5C320 /* AppDelegate.swift in Sources */,
+				285C0548259B6C3600C5C320 /* SceneDelegate.swift in Sources */,
+				285C054A259B6C3600C5C320 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		285C0557259B6C3C00C5C320 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				285C0560259B6C3C00C5C320 /* Smair_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		285C0562259B6C3C00C5C320 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				285C056B259B6C3C00C5C320 /* Smair_iOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		285C055D259B6C3C00C5C320 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 285C0541259B6C3600C5C320 /* Smair iOS */;
+			targetProxy = 285C055C259B6C3C00C5C320 /* PBXContainerItemProxy */;
+		};
+		285C0568259B6C3C00C5C320 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 285C0541259B6C3600C5C320 /* Smair iOS */;
+			targetProxy = 285C0567259B6C3C00C5C320 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		285C0553259B6C3B00C5C320 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				285C0554259B6C3B00C5C320 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		285C056D259B6C3C00C5C320 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		285C056E259B6C3C00C5C320 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		285C056F259B6C3C00C5C320 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Smair iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 947BCU3P9W;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Smair iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eric.middelhove.Smair-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		285C0570259B6C3C00C5C320 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Smair iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 947BCU3P9W;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Smair iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eric.middelhove.Smair-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		285C0571259B6C3C00C5C320 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 947BCU3P9W;
+				INFOPLIST_FILE = "Smair iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eric.middelhove.Smair-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smair iOS.app/Smair iOS";
+			};
+			name = Debug;
+		};
+		285C0572259B6C3C00C5C320 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 947BCU3P9W;
+				INFOPLIST_FILE = "Smair iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eric.middelhove.Smair-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smair iOS.app/Smair iOS";
+			};
+			name = Release;
+		};
+		285C0573259B6C3C00C5C320 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 947BCU3P9W;
+				INFOPLIST_FILE = "Smair iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eric.middelhove.Smair-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Smair iOS";
+			};
+			name = Debug;
+		};
+		285C0574259B6C3C00C5C320 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 947BCU3P9W;
+				INFOPLIST_FILE = "Smair iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eric.middelhove.Smair-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Smair iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		285C053D259B6C3600C5C320 /* Build configuration list for PBXProject "Smair iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				285C056D259B6C3C00C5C320 /* Debug */,
+				285C056E259B6C3C00C5C320 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		285C0578259B6C4400C5C320 /* Build configuration list for PBXNativeTarget "Smair iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				285C056F259B6C3C00C5C320 /* Debug */,
+				285C0570259B6C3C00C5C320 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		285C0579259B6C4400C5C320 /* Build configuration list for PBXNativeTarget "Smair iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				285C0571259B6C3C00C5C320 /* Debug */,
+				285C0572259B6C3C00C5C320 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		285C057A259B6C4400C5C320 /* Build configuration list for PBXNativeTarget "Smair iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				285C0573259B6C3C00C5C320 /* Debug */,
+				285C0574259B6C3C00C5C320 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		285C054B259B6C3600C5C320 /* Smair_iOS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				285C054C259B6C3600C5C320 /* Smair_iOS.xcdatamodel */,
+			);
+			currentVersion = 285C054C259B6C3600C5C320 /* Smair_iOS.xcdatamodel */;
+			path = Smair_iOS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 285C053A259B6C3600C5C320 /* Project object */;
+}
