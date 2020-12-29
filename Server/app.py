@@ -2,81 +2,115 @@ from flask import Flask, request
 from enum import Enum
 from uuid import uuid4
 
+from models import *
+
 global windows
 windows = []
 
-class Status(Enum):
-    CLOSED = 0
-    OPEN = 1
-    ANGLED = 2
-    ERROR = -1
+global noRoom 
+noRoom = Room("noRoom", "0")
 
-class Window:
-
-    def __init__(self, name, location):
-        self.id = str(uuid4())
-        self.name = name
-        self.location = location
-        self.status = Status.CLOSED
-
+global rooms
+rooms = []
 
 app = Flask(__name__)
+
 
 
 @app.route('/')
 def hello_world():
     return 'hello world'
 
-@app.route('/windows/', methods = ["POST"])
-def addWindow():
-    """ registers window in memory and returns the window id for the client to save """
-    
+@app.route('/heyThere/')
+def heyThere():
+    """Initialising new Window. Gets called when an Arduino initialises"""
     global windows
-    if request.method == "POST":
-        jsonDict = request.json
-        window = Window(jsonDict["name"], jsonDict["location"])
-        windows += [window]
+    global noRoom
 
-        return '{"id" : "' + window.id + '"}'
-    else:
-       return "Bad Request"
+    newWindow = Window(
+        ID = str(uuid4()),
+        room = noRoom,
+        name = "newWindow"
+    )
 
-@app.route('/windows/<id>')
-def getWindow(id):
-    global windows
+    newWindow.updateTimestamp()
+    windows += [newWindow]
 
-    for w in windows:
-        if w.id == id:
-            out = '{'
-            out += '"id" : "' + (w.id) + '",'
-            out += '"name" : "' + (w.name) +'",'
-            out += '"location" : "' + str(w.location) + '",'
-            out += '"status" : "' + str(w.status) +'"'
-            out += '}'
+    print("initialised window with ID " + newWindow.ID)
+    return '{ "ID" : "' + newWindow.ID + '"}'
 
-            return out
-    
-    return "Nothing Found"
-
-@app.route('/updateStatus/', methods = ["POST"])
-def updateStaus():
+@app.route('/updateStatus/', methods=["POST"])
+def updateStatus():
     global windows
 
     jsonDict = request.json
-    windowID = jsonDict["id"]
-    newStatus = jsonDict["status"]
+
+    windowID = jsonDict["ID"]
+
+    switcher = {
+        0: Status.CLOSED,
+        1: Status.OPEN,
+        2: Status.ANGLED,
+        -1: Status.ERROR
+    }
+
+    status = switcher.get(jsonDict["status"], Status.ERROR)
 
     for w in windows:
-        if w.id == windowID:
-            switcher = {
-                0: Status.CLOSED,
-                1: Status.ANGLED,
-                2: Status.OPEN
+        if w.ID == windowID:
+            w.status = status
+            w.updateTimestamp()
 
-            }
-            w.status = switcher.get(newStatus, Status.ERROR)
+
+    print("updated status of window with ID " + windowID)
+    return "200 OK"
+
+@app.route('/setRoom/', methods = ["POST"])
+def setRoom():
+    global rooms
+    global windows
+
+    jsonDict = request.json
+    windowID = jsonDict["ID"]
+    roomName = jsonDict["roomName"]
+    
+    i = 0
+    for w in windows:
+        if w.ID == windowID:
+            break
+        i = i + 1
+
+    for r in rooms:
+        if r.name == roomName:
+            windows[i].room = r
+            return "200 OK"
+
+    newRoom = Room(roomName) 
+    rooms += [newRoom]
+    windows[i].room = newRoom
+
 
     return "200 OK"
+
+
+@app.route('/windows/')
+def getWindows():
+    global windows
+
+    out = '['
+    for w in windows:
+        out += w.getJson()
+        out += ','
+
+    out = out[:-1]
+
+    out += ']'
+
+    print("returnd window data of all windows")
+    return out
+
+
+
 
 
 
