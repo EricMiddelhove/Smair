@@ -127,10 +127,27 @@ def getWindows():
 
     out += ']'
 
-    print("returnd window data of all windows")
+    print("returned window data of all windows")
     return out
 
 
+@app.route('/rooms/')
+def getRooms():
+    global rooms
+
+    if len(rooms) == 0: 
+        return "[]"
+
+    out = '['
+    for r in rooms:
+        out += r.getJson()
+        out += ','
+    
+    out = out[:-1]
+    out += ']'
+
+    print("returned room data of all rooms")
+    return out
 
 
 
