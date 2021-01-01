@@ -115,7 +115,7 @@ def setName():
 def getWindows():
     global windows
 
-    if len(w) == 0:
+    if len(windows) == 0:
         return "[]"
 
     out = '['
