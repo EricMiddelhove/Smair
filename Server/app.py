@@ -94,10 +94,29 @@ def setRoom():
 
     return "200 OK"
 
+@app.route('/setName/', methods = ["POST"])
+def setName():
+    global windows
+    jsonDict = request.json
+    
+    windowID = jsonDict["ID"]
+    name = jsonDict["name"]
+
+    print('set name of window "' + windowID + '" to "' + name + '"')
+
+    for w in windows: 
+        if w.id == windowID:
+            w.name = name
+
+    return "200 OK"
+
 
 @app.route('/windows/')
 def getWindows():
     global windows
+
+    if len(w) == 0:
+        return "[]"
 
     out = '['
     for w in windows:
