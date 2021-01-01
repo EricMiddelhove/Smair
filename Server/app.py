@@ -105,7 +105,7 @@ def setName():
     print('set name of window "' + windowID + '" to "' + name + '"')
 
     for w in windows: 
-        if w.id == windowID:
+        if w.ID == windowID:
             w.name = name
 
     return "200 OK"
