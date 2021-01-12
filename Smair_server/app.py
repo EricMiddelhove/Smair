@@ -36,7 +36,6 @@ def heyThere():
     )
 
     newWindow.updateTimestamp()
-    #windows += [newWindow]
     arduino_clients.insert_one(newWindow.getDict())
 
     print("initialised window with ID " + newWindow.ID)
@@ -50,20 +49,7 @@ def updateStatus():
 
     windowID = jsonDict["ID"]
 
-    switcher = {
-        0: Status.CLOSED,
-        1: Status.OPEN,
-        2: Status.ANGLED,
-        -1: Status.ERROR
-    }
-
-    status = switcher.get(jsonDict["status"], Status.ERROR)
-
-    for w in windows:
-        if w.ID == windowID:
-            w.status = status
-            w.updateTimestamp()
-
+    arduino_clients.update_one({"_id": windowID},{"$set": {"status": jsonDict["status"]}})
 
     print("updated status of window with ID " + windowID)
     return "200 OK"
@@ -76,16 +62,15 @@ def setRoom():
     roomName = jsonDict["roomName"]
     
     print('set room of window "' + windowID + '" to "' + roomName + '"')
-
-    #Returning only one
+    
     foundSomething = False
     myRoom = {}
-    for r in rooms.find({"name": roomName}):
+    for r in rooms.find({"name": roomName}): #finding stuff room with a matching name
         print("found a room")
         foundSomething = True
         myRoom = r
 
-    if foundSomething == False:
+    if foundSomething == False: #if no room was found, creating an new room
         print("found no room, creating an new one")
         myRoom = Room(roomName).getDict()
         rooms.insert_one(myRoom)
@@ -128,7 +113,6 @@ def getWindows():
 
     print("returned window data of all windows")
     return out
-
 
 @app.route('/rooms/')
 def getRooms():
