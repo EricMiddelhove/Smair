@@ -11,8 +11,6 @@ mydb = myclient["mydatabase"]
 arduino_clients = mydb["arduino_clients"]
 rooms = mydb["rooms"]
 
-global windows
-windows = []
 
 global noRoom 
 noRoom = Room("noRoom", "0")
@@ -72,8 +70,6 @@ def updateStatus():
 
 @app.route('/setRoom/', methods = ["POST"])
 def setRoom():
-    global rooms
-    global windows
 
     jsonDict = request.json
     windowID = jsonDict["ID"]
@@ -81,27 +77,25 @@ def setRoom():
     
     print('set room of window "' + windowID + '" to "' + roomName + '"')
 
-    i = 0
-    for w in windows:
-        if w.ID == windowID:
-            break
-        i = i + 1
+    #Returning only one
+    foundSomething = False
+    myRoom = {}
+    for r in rooms.find({"name": roomName}):
+        print("found a room")
+        foundSomething = True
+        myRoom = r
 
-    for r in rooms:
-        if r.name == roomName:
-            windows[i].room = r
-            return "200 OK"
+    if foundSomething == False:
+        print("found no room, creating an new one")
+        myRoom = Room(roomName).getDict()
+        rooms.insert_one(myRoom)
 
-    newRoom = Room(roomName) 
-    rooms += [newRoom]
-    windows[i].room = newRoom
-
+    arduino_clients.update_one({"_id": windowID}, {"$set": {"room": myRoom}})
 
     return "200 OK"
 
 @app.route('/setName/', methods = ["POST"])
 def setName():
-    global windows
     jsonDict = request.json
     
     windowID = jsonDict["ID"]
@@ -109,9 +103,7 @@ def setName():
 
     print('set name of window "' + windowID + '" to "' + name + '"')
 
-    for w in windows: 
-        if w.ID == windowID:
-            w.name = name
+    arduino_clients.update_one({"_id": windowID},{"$set": {"name": name}})
 
     return "200 OK"
 
@@ -140,14 +132,17 @@ def getWindows():
 
 @app.route('/rooms/')
 def getRooms():
-    global rooms
 
-    if len(rooms) == 0: 
+    allRooms = []
+    for r in rooms.find():
+        allRooms += [r] 
+
+    if len(allRooms) == 0: 
         return "[]"
 
     out = '['
-    for r in rooms:
-        out += r.getJson()
+    for r in allRooms:
+        out += str(r)
         out += ','
     
     out = out[:-1]
@@ -155,10 +150,6 @@ def getRooms():
 
     print("returned room data of all rooms")
     return out
-
-
-
-
 
 if __name__ == '__main__':
     app.run()
