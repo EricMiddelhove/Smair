@@ -1,17 +1,21 @@
 from flask import Flask, request
 from enum import Enum
 from uuid import uuid4
+import pymongo
 
 from models import *
+
+
+myclient = pymongo.MongoClient("mongodb://127.0.0.1:27017/")
+mydb = myclient["mydatabase"]
+arduino_clients = mydb["arduino_clients"]
+rooms = mydb["rooms"]
 
 global windows
 windows = []
 
 global noRoom 
 noRoom = Room("noRoom", "0")
-
-global rooms
-rooms = []
 
 app = Flask(__name__)
 
@@ -34,7 +38,8 @@ def heyThere():
     )
 
     newWindow.updateTimestamp()
-    windows += [newWindow]
+    #windows += [newWindow]
+    arduino_clients.insert_one(newWindow.getDict())
 
     print("initialised window with ID " + newWindow.ID)
     return '{ "ID" : "' + newWindow.ID + '"}'
@@ -110,17 +115,19 @@ def setName():
 
     return "200 OK"
 
-
 @app.route('/windows/')
 def getWindows():
-    global windows
+    windows = []
+
+    for w in arduino_clients.find():
+        windows += [w]
 
     if len(windows) == 0:
-        return "[]"
+        return'[]'
 
     out = '['
     for w in windows:
-        out += w.getJson()
+        out += str(w)
         out += ','
 
     out = out[:-1]

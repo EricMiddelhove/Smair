@@ -13,16 +13,18 @@ class Window():
         self.ID = str(ID)
         self.room = room
         self.name = str(name)
-        self.timestamp = datetime.now()
+        self.timestamp = str(datetime.now().strftime("%y-%m-%d %H:%M:%S"))
         self.status = Status.CLOSED
 
+        print(self.timestamp)
+
     def updateTimestamp(self):
-        self.timestamp = datetime.now
+        self.timestamp = str(datetime.now().strftime("%y-%m-%d %H:%M:%S"))
 
     def checkTimestamp(self):
         """ return true if timestamp is valid -> not older than 10 seconds ago """
         currentTime = datetime.now()
-        difference = currentTime - self.timestamp
+        difference = currentTime - datetime.strptime(self.timestamp.strftime, "%y-%m-%d %H:%M:%S")
 
         return (difference.total_seconds() < 10)
 
@@ -34,10 +36,17 @@ class Window():
         out += '"status" : "' + str(self.status.value) + '"'
         out += '}'
 
-
-
         return out
-
+    
+    def getDict(self):
+        d = {
+            "_id": self.ID,
+            "roomID": self.room.ID,
+            "name": self.name,
+            "timestamp": self.timestamp,
+            "status": self.status.value
+        }
+        return d
 
 class Room():
     def __init__(self, name, ID = str(uuid4())):
@@ -51,4 +60,10 @@ class Room():
         out += '}'
 
         return out
+
+    def getDict(self):
+        d = {
+            "_id": self.ID,
+            "name": self.name
+        }
 
