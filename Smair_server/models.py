@@ -41,7 +41,7 @@ class Window():
     def getDict(self):
         d = {
             "_id": self.ID,
-            "roomID": self.room.ID,
+            "room": self.room.getDict(),
             "name": self.name,
             "timestamp": self.timestamp,
             "status": self.status.value
@@ -66,4 +66,5 @@ class Room():
             "_id": self.ID,
             "name": self.name
         }
+        return d
 
