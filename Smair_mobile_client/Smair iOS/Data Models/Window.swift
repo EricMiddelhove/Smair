@@ -22,21 +22,22 @@ class Window: Hashable, ObservableObject{
     var id: String
     @Published var name: String
     @Published var location: Room
-    var status: String
+    var status: Int
     
     init(id: String, name: String, room: Room){
         
         self.id = id
         self.name = name
         self.location = room
-        self.status = "0"
+        self.status = 0
     }
     
     init(from dict: [String: AnyObject]){
-        self.id = dict["ID"] as! String
+        self.id = dict["_id"] as! String
         self.name = dict["name"] as! String
         self.location = Room(from: dict["room"] as! [String: AnyObject])
-        self.status = dict["status"] as! String
+        self.status = (dict["status"]) as! Int
+        
     }
     
     func getDescription() -> String{
@@ -45,10 +46,10 @@ class Window: Hashable, ObservableObject{
     
     func getStatusString() -> String{
         switch(self.status){
-            case "0": return "CLOSED";
-            case "1": return "ANGLED";
-            case "2": return "OPEN";
-            default: return "ERROR"; 
+            case 0 : return "CLOSED";
+            case 1 : return "ANGLED";
+            case 2 : return "OPEN";
+            default : return "ERROR"; 
         }
     }
 }

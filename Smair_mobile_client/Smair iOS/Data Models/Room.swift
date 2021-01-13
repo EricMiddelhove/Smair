@@ -27,7 +27,7 @@ class Room: Hashable, ObservableObject{
     }
     
     init(from dict: [String: AnyObject]){
-        self.id = dict["ID"] as! String
+        self.id = dict["_id"] as! String
         self.name = dict["name"] as! String
     }
 }

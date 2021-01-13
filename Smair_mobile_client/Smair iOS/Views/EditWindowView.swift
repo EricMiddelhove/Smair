@@ -37,9 +37,9 @@ struct EditWindowView: View{
         
         switch(currentWindow.status){
         
-            case "0": statusColor = .green; break;
-            case "1": statusColor = .orange; break;
-            case "2": statusColor = .red; break;
+            case 0: statusColor = .green; break;
+            case 1: statusColor = .orange; break;
+            case 2: statusColor = .red; break;
             default: statusColor = .black; break;
         
         }

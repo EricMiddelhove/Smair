@@ -91,9 +91,9 @@ struct CellView: View{
     
     func initialise() {
         switch window.status {
-            case "0": statusColor = Color.green
-            case "1": statusColor = Color.orange; break;
-            case "2": statusColor = Color.red; break;
+            case 0: statusColor = Color.green
+            case 1: statusColor = Color.orange; break;
+            case 2: statusColor = Color.red; break;
             
             default: statusColor = Color.black; break;
         }
