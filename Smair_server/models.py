@@ -14,7 +14,7 @@ class Window():
         self.room = room
         self.name = str(name)
         self.timestamp = str(datetime.now().strftime("%y-%m-%d %H:%M:%S"))
-        self.status = Status.CLOSED
+        self.status = Status.CLOSED.value
 
         print(self.timestamp)
 
@@ -33,7 +33,7 @@ class Window():
         out += '"ID" : "' + self.ID + '",'
         out += '"room" : ' + self.room.getJson() + ','
         out += '"name" : "' + self.name + '",'
-        out += '"status" : "' + str(self.status.value) + '"'
+        out += '"status" : "' + str(self.status) + '"'
         out += '}'
 
         return out
