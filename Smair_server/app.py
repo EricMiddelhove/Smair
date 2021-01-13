@@ -110,6 +110,7 @@ def getWindows():
     out = out[:-1]
 
     out += ']'
+    out.replace("'",'"')
 
     print("returned window data of all windows")
     return out
@@ -132,6 +133,7 @@ def getRooms():
     out = out[:-1]
     out += ']'
 
+    out.replace("'",'"')
     print("returned room data of all rooms")
     return out
 
