@@ -104,7 +104,7 @@ def getWindows():
 
     out = '['
     for w in windows:
-        out += str(w)
+        out += str(w).replace("'","\"")
         out += ','
 
     out = out[:-1]
@@ -126,7 +126,7 @@ def getRooms():
 
     out = '['
     for r in allRooms:
-        out += str(r)
+        out += str(r).replace("'","\"")
         out += ','
     
     out = out[:-1]
