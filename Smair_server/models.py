@@ -44,7 +44,7 @@ class Window():
             "room": self.room.getDict(),
             "name": self.name,
             "timestamp": self.timestamp,
-            "status": self.status.value
+            "status": self.status
         }
         return d
 
