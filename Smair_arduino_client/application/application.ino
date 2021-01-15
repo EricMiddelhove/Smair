@@ -5,7 +5,7 @@
 
 class URL{    
   public:
-     char connectionType[3] = "TCP";
+     char connectionType[4] = "TCP";
      char* ip_ptr;
      char* port_ptr;
      char* path_ptr;
@@ -18,29 +18,27 @@ class URL{
      
 };
 
-
 class WiFiModule {
   private:
     uint8_t RX = 2;
     uint8_t TX = 3; 
     SoftwareSerial* connectionPointer; //Creating a pointer -> will refer to the SoftwareSerial Object created in the constructor
-    char id[37];
+    
     
   public: 
-
+    char id[37];
+    
     WiFiModule(uint8_t rx, uint8_t tx){
       RX = rx;
       TX = tx;
 
       SoftwareSerial sC(2,3);    //Initialising a SoftwareSerial Object
-      connectionPointer = &sC;     //The pointer will point to the address of the sC Object -> The initialised SoftwareSerial Object
+      connectionPointer = &sC;   //The pointer will point to the address of the sC Object -> The initialised SoftwareSerial Object
       pinMode(13,OUTPUT);
     };
     
     bool startUp(){
       SoftwareSerial serialConnection = *connectionPointer;
-
-      Serial.println("Start me up!");
       
       digitalWrite(13,HIGH);
       delay(500);
@@ -56,7 +54,7 @@ class WiFiModule {
 
 
       return serialConnection.findUntil("OK","ERROR");
-  }
+    }
 
     bool openConnection(){
 
@@ -83,14 +81,14 @@ class WiFiModule {
       char *command = "AT+CIPSEND=27\r\n";
       char *firstline = "GET /heyThere/ HTTP/1.1\r\n"; //23 
       char *blankline = "\r\n";
+      
       serialConnection.print(command);
-
       serialConnection.setTimeout(2000);
       if(!serialConnection.findUntil(">","ERROR")){
         Serial.println("Failed to send http head");
         return false;
       }else{
-        Serial.println("head sent");
+        Serial.println("command sent");
       }
       
       serialConnection.write(firstline);
@@ -104,40 +102,91 @@ class WiFiModule {
       while(!endOfResponse){
         while(serialConnection.available()){
           response[i] = serialConnection.read();
-        
+          //Serial.print(response[i]);
           if (response[i] == '}'){
             endOfResponse = true;
           }
-        
+          
           i++;
         }
-        
       }
-      Serial.println(response);
+
       // --- Snowflake --- Saving response in private variable
       //Saved response
       i = 0;
       while(response[i] != '{') i++; //Goning forward to the begin of the json
       while(response[i] != ':') i++; //Begin of ID String
       while(response[i] != '"') i++; 
-      i++;                           //
+      i++;                           
       
       for(int j = 0; j < 36; j++){
         id[j] = response[i];
         i++;
       }
-      
-      Serial.println(id);
       //Serial.println(*id);
+
+
+      //Closing the connection
+      serialConnection.print("AT+CIPCLOSE\r\n");
       return true;
       
     }
-    
+
+    bool sendUpdate(){
+      SoftwareSerial serialConnection = *connectionPointer;
+      Serial.println("Trying to send the update");
+      
+      if(!openConnection()){
+        Serial.println("Failed to open connection");
+        return false;   
+      }
+      Serial.print("opened the connection");
+      
+      serialConnection.print("AT+CIPSEND=94\r\n");
+
+      serialConnection.setTimeout(2000);
+      if(!serialConnection.findUntil(">","ERROR")){
+        Serial.println("Failed to send http head");
+        return false;
+      }else{
+        Serial.println("command sent");
+      }
+      
+      char *firstline = "POST /updateStatus/ HTTP/1.1\r\n"; //30
+      char *head = "Content-Length: 61\r\n";
+      char *body = "{\"ID\" : \"fe064074-e92b-4bad-bb27-15b86ed502c06ed\",\"status\" : 2}\r\n"; //61
+      char *blankline = "\r\n";
+      //On Device
+
+      serialConnection.print(firstline);
+      Serial.print("head sent");
+      serialConnection.print(blankline);
+      serialConnection.print(body);
+      
+      char response[208] = {}; //char response[255];
+      bool endOfResponse = false;
+
+      byte i = 0;
+      while(!endOfResponse){
+        while(serialConnection.available()){
+          response[i] = serialConnection.read();
+          Serial.print(response[i]);
+          if (response[i] == 'H'){
+            endOfResponse = true;
+          }
+          
+          i++;
+        }
+      }
+    }
 };
 
 void setup(){
+  
   // Open serial communications and wait for port to open:
-  Serial.begin(115200);
+  Serial.begin(9600);
+  Serial.print("\n");
+  
   while (!Serial) {
     ; // wait for serial port to connect. Needed for Native USB only
   }
@@ -147,8 +196,12 @@ void setup(){
   if(!esp.startUp()){
     Serial.print("Failed to startup");
   }
-  digitalWrite(13,esp.sendHeyThere());
-  // set the data rate for the SoftwareSerial port
+  esp.sendHeyThere();
+  delay(1000);
+  Serial.println("end");
+
+  //esp.sendUpdate();
+  // set the data rate for the SoftwareSerial portt
 }
 
 void loop(){ // run over and over
